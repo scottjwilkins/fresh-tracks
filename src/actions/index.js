@@ -1,6 +1,6 @@
 
-const SERVICE_SELECTED = 'SERVICE_SELECTED';
-const FOOD_SELECTED = 'FOOD_SELECTED'
+export const SERVICE_SELECTED = 'SERVICE_SELECTED';
+export const FOOD_SELECTED = 'FOOD_SELECTED'
 
 export function selectService(service) {
   return {

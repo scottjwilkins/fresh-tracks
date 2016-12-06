@@ -1,8 +1,10 @@
-export default function() {
-  return [
-    {title: "The art of War", pages: 75},
-    {title: "Lord of the Rings", pages: 665},
-    {title: "The Gunslinger", pages: 3435},
-    {title: "The God of Small Things", pages: 34}
-  ]
-}
+import { combineReducers } from 'redux';
+import ServiceReducer from './reducer_service_selected';
+import FoodReducer from './reducer_food_selected';
+
+const rootReducer = combineReducers({
+  serviceStyle: ServiceReducer,
+  food: FoodReducer
+});
+
+export default rootReducer;
