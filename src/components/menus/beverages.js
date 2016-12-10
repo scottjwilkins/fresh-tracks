@@ -32,7 +32,7 @@ class Beverages extends Component {
     ];
 
     return (
-      <div>
+      <div className="container-with-sidebar">
         <h1 className="titles">Beverages</h1>
         {this.renderBeverages(beverages)}
       </div>

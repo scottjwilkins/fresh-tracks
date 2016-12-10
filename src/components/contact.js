@@ -1,4 +1,6 @@
 import React from 'react';
+import gondola from '../resources/gondola.png';
+
 export default () => {
   return (
     <div className="container gutter">

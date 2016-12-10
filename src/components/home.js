@@ -3,6 +3,7 @@ import dave from '../resources/dave.png';
 import salad from '../resources/fresh_salad.png';
 import piechart from '../resources/piechart.png';
 import { Link } from 'react-router';
+import gondola from '../resources/gondola.png';
 
 export default () => {
   window.scrollTo(0, 0)
@@ -78,7 +79,7 @@ food was and people were commenting about how great the food was 3 days after ou
 we put our trust in the hands of the Fresh Tracks team, we were taken care of every step of the way.
 
 Thank you Fresh Tracks!” – Allegra, bride June 2015</p>
-<Link to="/submit"><button className="button-start">Let's Get Started <i className="fa fa-angle-right"></i></button></Link>
+<Link to="/service_style"><button className="button-start">Let's Get Started <i className="fa fa-angle-right"></i></button></Link>
     </div>
   )
 }

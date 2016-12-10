@@ -7,10 +7,12 @@ import Desserts from './menus/desserts.js';
 import Munchies from './menus/munchies.js';
 import checkedBox from '../resources/checked-box.png';
 import van from '../resources/drop-off.png';
+import gondola from '../resources/gondola.png';
 
 export default () => {
   return (
-    <div className="container">
+    <div className="container-with-sidebar">
+      <img src={gondola} className="gondola" alt="fresh tracks logo" />
       <img src={checkedBox} alt="checkbox" className="checkBox" />
       <h1 className="titles">Drop off menu</h1>
         <div className="gutter container-vert">

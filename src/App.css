@@ -1,12 +1,25 @@
 *{
-  font-family: "Trebuchet MS";
+  /*font-family: "Trebuchet MS";*/
+  font-family: 'Josefin Sans', sans-serif;
   color: #333;
 }
 .container {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.container-with-sidebar {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;;
+  margin-left: 15%;
+
+}
+.container-outside {
+  width: 100vw;
+  display: flex;
 }
 
 .container-vert{
@@ -18,8 +31,49 @@
 .container-vert-left{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;;
+  align-items: flex-start;
   width: 90%;
+}
+.sidebar {
+  top: 60px;
+  position: fixed;
+  background-color: #454;
+  height: 120%;
+  font-size: .8em;
+  width: 20%;
+}
+.sidebar-div {
+  padding-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 20px 10% 10px 0px;
+  height: 30px;
+  cursor: pointer;
+}
+.sidebar-div *{
+  color: #ddd;
+  text-decoration: none;
+}
+.sidebar-div *:hover{
+  color: #aaa;
+}
+.sidebar *{
+  color: #ddd;
+}
+.highlight {
+  padding-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 10px 10px 0px;
+  height: 30px;
+  width: 90%;
+  background-color: #676;
+}
+.highlight * {
+  text-decoration: none;
 }
 .container-horiz{
   display: flex;
@@ -53,7 +107,11 @@
 }
 .gondola{
   width: 300px;
-  margin-top: 25px;
+  margin-top: 45px;
+}
+.gondola-sidebar{
+  width: 100px;
+  margin-top: 45px;
 }
 .big-blurb{
   font-size: 1em;
@@ -69,8 +127,11 @@
   padding: 3px;
   font-size: .7em;
   margin-top: -10px;
-  height: 45px;
+  height: 65px;
   width: 100%;
+}
+.navbar *{
+  text-decoration: none;
 }
 .questions{
   font-size: 1.2em;
@@ -107,7 +168,6 @@
   text-align: center;
 }
 .selectBox{
-
   display:flex;
   align-items: center;
   justify-content: center;
@@ -131,8 +191,25 @@ tr:hover{
   height: 50px;
   width: 50px;
 }
-@media only screen and (min-width: 640px) {
+.fa-cutlery{
+  color: #fff;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 675px) {
     /* For desktop: */
+    .sidebar {
+      font-size: 1.6em;
+    }
+    .sidebar-div {
+      height: 60px;
+    }
+    .highlight {
+      height: 60px;
+    }
+    .gondola-sidebar{
+      width: 170px;
+      margin-top: 45px;
+    }
     .style-img{
       height: 200px;
       width: 200px;
@@ -164,6 +241,14 @@ tr:hover{
     }
     p{
       font-size: 1em;
+    }
+    .container {
+      width: 100%;
+    }
+    .fa-cutlery{
+      font-size: 1em;
+      color: #fff;
+      margin-left: 27%;
     }
 }
 .top-margin{
@@ -216,12 +301,12 @@ tr:hover{
 input {
   margin-right: 15px;
   float: left;
-  margin-top: px
 }
 input[type=checkbox]
 {
  zoom: 1.5;
 }
-form p{
-  /*padding-top: 5px;*/
+.fa-cutlery{
+  color: #fff;
+  margin-left: 27%;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import ProposalIndex from './components/proposal_index'
-import ProposalSubmit from './components/proposal_submit'
+import Home from './components/home'
+import ServiceStyle from './components/service_style'
 import Faq from './components/faq'
 import Sample from './components/sample'
 import Contact from './components/contact'
@@ -12,8 +12,8 @@ import './App.css';
 
 export default (
   <Route path="/" component={App} >
-    <IndexRoute component={ProposalIndex} />
-    <Route path="/submit" component={ProposalSubmit} />
+    <IndexRoute component={Home} />
+    <Route path="/service_style" component={ServiceStyle} />
     <Route path="/faq" component={Faq} />
     <Route path="/sample" component={Sample} />
     <Route path="/contact" component={Contact} />

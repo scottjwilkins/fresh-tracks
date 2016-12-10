@@ -2,8 +2,15 @@
 export const SERVICE_SELECTED = 'SERVICE_SELECTED';
 export const FOOD_SELECTED = 'FOOD_SELECTED';
 export const APP_SELECTED = 'APP_SELECTED';
-export const BUFFET_SELECTED = 'BUFFET_SELECTED';
 export const BEVERAGE_SELECTED = 'BEVERAGE_SELECTED';
+export const DESSERT_SELECTED = 'DESSERT_SELECTED';
+export const MUNCHIES_SELECTED = 'MUNCHIES_SELECTED';
+export const GLASSWARE_SELECTED = 'GLASSWARE_SELECTED';
+export const BREAD_SELECTED = 'BREAD_SELECTED';
+export const SIDES_SELECTED = 'SIDES_SELECTED';
+export const SALAD_SELECTED = 'SALAD_SELECTED';
+export const ENTREES_SELECTED = 'ENTREES_SELECTED';
+
 
 export function selectService(service) {
   return {
@@ -23,15 +30,51 @@ export function handleCheckboxChangeApp(app) {
     payload: app
   }
 }
-export function handleCheckboxChangeBuffet(buffet) {
-  return {
-    type: BUFFET_SELECTED,
-    payload: buffet
-  }
-}
 export function handleCheckboxChangeBeverages(beverage) {
   return {
     type: BEVERAGE_SELECTED,
     payload: beverage
+  }
+}
+export function handleCheckboxChangeDessert(dessert) {
+  return {
+    type: DESSERT_SELECTED,
+    payload: dessert
+  }
+}
+export function handleCheckboxChangeMunchies(munchies) {
+  return {
+    type: MUNCHIES_SELECTED,
+    payload: munchies
+  }
+}
+export function handleCheckboxChangeGlassware(glassware) {
+  return {
+    type: GLASSWARE_SELECTED,
+    payload: glassware
+  }
+}
+export function handleCheckboxChangeBread(bread) {
+  return {
+    type: BREAD_SELECTED,
+    payload: bread
+  }
+}
+export function handleCheckboxChangeSalad(salad) {
+  return {
+    type: SALAD_SELECTED,
+    payload: salad
+  }
+}
+export function handleCheckboxChangeSides(sides) {
+  return {
+    type: SIDES_SELECTED,
+    payload: sides
+  }
+}
+export function handleCheckboxChangeEntrees(entrees) {
+  return {
+    type: ENTREES_SELECTED,
+    payload: entrees
   }
 }

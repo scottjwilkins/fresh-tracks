@@ -4,7 +4,9 @@ import { handleCheckboxChangeApp } from '../../actions/index.js';
 
 
 class Appetizers extends Component {
-
+  componentWillMount(){
+        window.scrollTo(0, 0)
+  }
   renderAppetizers(apps) {
     return apps.map(app => {
       return (
@@ -14,7 +16,7 @@ class Appetizers extends Component {
   }
   render() {
   const propApps = this.props.apps
-  
+
   //created class to be able to check the defaultChecked value (passed as this.checked)
   class App {
     constructor(value, description) {
@@ -98,7 +100,7 @@ class Appetizers extends Component {
     new App("Low Country Shrimp & Grits","Low Country Shrimp & Grits/roasted mirepoix/crispy ham (gf)"),
   ];
     return (
-      <div>
+      <div className="container-with-sidebar">
       <h1 className="titles">Appetizers</h1>
       <h5 className="sample-titles">Displayed Appetizers – per person</h5>
       <i>Passed Appetizers for up to 1 hour</i>

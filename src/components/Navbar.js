@@ -8,9 +8,9 @@ export default () => {
         <Link to="/faq">FAQ</Link>
         <Link to="/sample">Sample Menu</Link>
         <Link to="/contact">Contact Us</Link>
-        <Link to="/submit">Let's get started</Link>
+        <Link to="/service_style">Let's get started</Link>
       </div>
-        
+
     </div>
   )
 }

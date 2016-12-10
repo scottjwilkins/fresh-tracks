@@ -1,4 +1,6 @@
 import React from 'react';
+import gondola from '../resources/gondola.png';
+
 export default () => {
   return (
     <div className="container">
@@ -53,7 +55,7 @@ export default () => {
 
           25% is due the week of your event.</p>
           <div className="top-margin"></div>
-    
+
             <small className="center-text">Please give us a call if you have additional questions. 303-526-0511</small>
       </div>
 

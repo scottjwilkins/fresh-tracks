@@ -1,42 +1,47 @@
-import { APP_SELECTED, BUFFET_SELECTED, BEVERAGE_SELECTED } from '../actions/index';
+import { APP_SELECTED, BEVERAGE_SELECTED, DESSERT_SELECTED, MUNCHIES_SELECTED, GLASSWARE_SELECTED, BREAD_SELECTED, SIDES_SELECTED, ENTREES_SELECTED, SALAD_SELECTED } from '../actions/index';
+
 const INITIAL_STATE = {
-  appetizers: [
-    "Garlic naan flat bread pizza",
-    "Domestic Cheese",
-    "Tequila lime marinated flank steak skewers"
-  ],
-  buffet: [
-    "honey whole wheat"
-  ],
+  appetizers: [],
   beverages: [],
+  dessert: [],
+  munchies: [],
+  glassware: [],
+  bread: [],
+  sides: [],
+  entrees: [],
+  salad: []
 };
 export default function(state = INITIAL_STATE, action) {
+
+  function stateDelegator(food) {
+    if(state[food].indexOf(action.payload.target.value) !== -1) {
+      let items = state[food];
+      items.splice(items.indexOf(action.payload.target.value), 1)
+      return { ...state, [food]: items};
+    } else {
+      return { ...state, [food]: [...state[food], action.payload.target.value]};
+    }
+
+  }
   switch(action.type) {
     case APP_SELECTED:
-       if(state.appetizers.indexOf(action.payload.target.value) !== -1) {
-         let apps = state.appetizers;
-         apps.splice(apps.indexOf(action.payload.target.value), 1)
-         return { ...state, appetizers: apps};
-       } else {
-         return { ...state, appetizers: [...state.appetizers, action.payload.target.value]};
-       }
-    case BUFFET_SELECTED:
-       if(state.buffet.indexOf(action.payload.target.value) !== -1) {
-         let buff = state.buffet;
-         buff.splice(buff.indexOf(action.payload.target.value), 1)
-         return { ...state, buffet: buff};
-       } else {
-         return { ...state, buffet: [...state.buffet, action.payload.target.value]};
-       }
+      return stateDelegator("appetizers");
     case BEVERAGE_SELECTED:
-       if(state.beverages.indexOf(action.payload.target.value) !== -1) {
-         let bev = state.beverages;
-         bev.splice(bev.indexOf(action.payload.target.value), 1)
-         return { ...state, beverages: bev};
-       } else {
-         return { ...state, beverages: [...state.beverages, action.payload.target.value]};
-       }
-
+      return stateDelegator("beverages");
+    case DESSERT_SELECTED:
+      return stateDelegator("desserts");
+    case MUNCHIES_SELECTED:
+      return stateDelegator("munchies");
+    case GLASSWARE_SELECTED:
+      return stateDelegator("glassware");
+    case BREAD_SELECTED:
+      return stateDelegator("bread");
+    case SIDES_SELECTED:
+      return stateDelegator("sides");
+    case SALAD_SELECTED:
+      return stateDelegator("salad");
+    case ENTREES_SELECTED:
+      return stateDelegator("entrees");
     default:
       return state
   }
