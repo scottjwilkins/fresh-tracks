@@ -9,7 +9,7 @@ class Munchies extends Component {
   renderMunchies(munchies) {
     return munchies.map(item => {
       return (
-        <p key={item.value}><input onChange={this.props.handleCheckboxChangeMunchies} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
+        <p className="checkbox-description" key={item.value}><input onChange={this.props.handleCheckboxChangeMunchies} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
       )
     })
   }

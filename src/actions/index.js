@@ -1,5 +1,6 @@
 
 export const SERVICE_SELECTED = 'SERVICE_SELECTED';
+export const NAVBAR_SELECTED = 'NAVBAR_SELECTED';
 export const FOOD_SELECTED = 'FOOD_SELECTED';
 export const APP_SELECTED = 'APP_SELECTED';
 export const BEVERAGE_SELECTED = 'BEVERAGE_SELECTED';
@@ -76,5 +77,11 @@ export function handleCheckboxChangeEntrees(entrees) {
   return {
     type: ENTREES_SELECTED,
     payload: entrees
+  }
+}
+export function selectNavbar(choice) {
+  return {
+    type: NAVBAR_SELECTED,
+    payload: choice
   }
 }

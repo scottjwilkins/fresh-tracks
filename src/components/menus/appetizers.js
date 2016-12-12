@@ -5,12 +5,12 @@ import { handleCheckboxChangeApp } from '../../actions/index.js';
 
 class Appetizers extends Component {
   componentWillMount(){
-        window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
   }
   renderAppetizers(apps) {
     return apps.map(app => {
       return (
-        <p key={app.value}><input onChange={this.props.handleCheckboxChangeApp} defaultChecked={app.checked} type="checkbox" value={app.value} />{app.description}</p>
+        <p className="checkbox-description" key={app.value}><input onChange={this.props.handleCheckboxChangeApp} defaultChecked={app.checked} type="checkbox" value={app.value} />{app.description}</p>
       )
     })
   }

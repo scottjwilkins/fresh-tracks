@@ -6,14 +6,13 @@ class Beverages extends Component {
   renderBeverages(bevies) {
     return bevies.map(item => {
       return (
-        <p key={item.value}><input onChange={this.props.handleCheckboxChangeBeverages} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
+        <p className="checkbox-description" key={item.value}><input onChange={this.props.handleCheckboxChangeBeverages} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
       )
     })
   }
 
   render() {
     const propBeverages = this.props.beverages
-    console.log(propBeverages);
     //created class to be able to check the defaultChecked value (passed as this.checked)
     class Bevs {
       constructor(value, description) {
@@ -33,7 +32,9 @@ class Beverages extends Component {
 
     return (
       <div className="container-with-sidebar">
-        <h1 className="titles">Beverages</h1>
+        <div className="gutter container-vert">
+          <h1 className="titles">Beverages</h1>
+        </div>
         {this.renderBeverages(beverages)}
       </div>
     )

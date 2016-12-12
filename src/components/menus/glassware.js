@@ -6,7 +6,7 @@ class Glassware extends Component {
   renderGlassware(glass) {
     return glass.map(item => {
       return (
-        <p key={item.value}><input onChange={this.props.handleCheckboxChangeGlassware} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
+        <p className="checkbox-description" key={item.value}><input onChange={this.props.handleCheckboxChangeGlassware} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
       )
     })
   }
@@ -28,7 +28,7 @@ class Glassware extends Component {
     ];
 
     return (
-      <div>
+      <div className="container-with-sidebar">
         <h1 className="titles">Bar Glassware</h1>
         {this.renderGlassware(glassware)}
       </div>

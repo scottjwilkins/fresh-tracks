@@ -9,7 +9,7 @@ class Loveland extends Component {
   renderSides(side) {
     return side.map(item => {
       return (
-        <p key={item.value}><input onChange={this.props.handleCheckboxChangeSides} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
+        <p className="checkbox-description" key={item.value}><input onChange={this.props.handleCheckboxChangeSides} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
       )
     })
   }

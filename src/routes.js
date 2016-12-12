@@ -5,7 +5,7 @@ import ServiceStyle from './components/service_style'
 import Faq from './components/faq'
 import Sample from './components/sample'
 import Contact from './components/contact'
-import Food from './components/food'
+import Menu from './components/menu'
 import App from './App';
 import './App.css';
 
@@ -17,6 +17,6 @@ export default (
     <Route path="/faq" component={Faq} />
     <Route path="/sample" component={Sample} />
     <Route path="/contact" component={Contact} />
-    <Route path="/food" component={Food} />
+    <Route path="/menu" component={Menu} />
   </Route>
 )

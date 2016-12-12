@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from 'react';  
 import plated from '../resources/plated.png';
 import cook from '../resources/cook.png';
 import station from '../resources/station.png';
@@ -13,7 +12,7 @@ import { connect } from 'react-redux';
 import { selectService } from '../actions/index.js';
 
 
-class proposalSubmit extends Component {
+class Service extends Component {
 
   componentWillMount(){
         window.scrollTo(0, 0)
@@ -115,7 +114,7 @@ class proposalSubmit extends Component {
                 </tr>
                 <tr onClick={() => this.props.selectService("drop-off")}>
                   <td>
-                    <img src={van} alt="van" className="style-img"/>
+                    <img src={van} alt="van" className="van"/>
                     </td>
                   <td>
                     <h2 className="style-headline">Drop Off Service</h2>
@@ -140,9 +139,6 @@ class proposalSubmit extends Component {
 
               the most rustic locations.</p>
         </div>
-          <Link to={this.props.style ? "/food" : "/submit"}><button className="button-start">Next <i className="fa fa-angle-right"></i></button></Link>
-          <p className="warning">{this.props.style ? "" : "(please make a selection to proceed)"}</p>
-          <br></br>
       </div>
     )
   }
@@ -151,4 +147,4 @@ function mapStateToProps(state) {
     return {style: state.serviceStyle.style}
 }
 
-export default connect(mapStateToProps, {selectService: selectService})(proposalSubmit);
+export default connect(mapStateToProps, {selectService})(Service);

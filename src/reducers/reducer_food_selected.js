@@ -29,7 +29,7 @@ export default function(state = INITIAL_STATE, action) {
     case BEVERAGE_SELECTED:
       return stateDelegator("beverages");
     case DESSERT_SELECTED:
-      return stateDelegator("desserts");
+      return stateDelegator("dessert");
     case MUNCHIES_SELECTED:
       return stateDelegator("munchies");
     case GLASSWARE_SELECTED:

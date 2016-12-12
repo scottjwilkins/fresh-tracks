@@ -6,7 +6,7 @@ class Dessert extends Component {
   renderDessert(dessert) {
     return dessert.map(item => {
       return (
-        <p key={item.value}><input onChange={this.props.handleCheckboxChangeDessert} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
+        <p className="checkbox-description" key={item.value}><input onChange={this.props.handleCheckboxChangeDessert} defaultChecked={item.checked} type="checkbox" value={item.value} />{item.description}</p>
       )
     })
   }
