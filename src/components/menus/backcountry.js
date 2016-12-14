@@ -32,9 +32,6 @@ class Backcountry extends Component {
     const propSalad = this.props.salad
     const propEntrees = this.props.entrees
     const propSides = this.props.sides
-    console.log(propSalad);
-    console.log(propSides);
-    console.log(propEntrees);
     //created class to be able to check the defaultChecked value (passed as this.checked)
     class SaladClass {
       constructor(value, description) {

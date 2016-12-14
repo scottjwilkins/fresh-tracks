@@ -13,7 +13,6 @@ class Bread extends Component {
 
   render() {
     const propBread = this.props.bread
-    console.log(propBread);
     //created class to be able to check the defaultChecked value (passed as this.checked)
     class BreadClass {
       constructor(value, description) {

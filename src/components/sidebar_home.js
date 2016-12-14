@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import gondola from '../resources/gondola.png';
+import { selectNavbar } from '../actions/index';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
-export default class Sidebar extends Component {
+class Sidebar extends Component {
   handleClick(e){
     this.props.changeCourse(e)
   }
@@ -8,6 +12,9 @@ export default class Sidebar extends Component {
     return (
       <div className="sidebar">
         <div className="center">
+          <div className="gondola-container" onClick={() => {this.props.selectNavbar('home')}}>
+            <Link to="/"><img src={gondola} className="gondola" alt="Fresh Tracks Logo"/></Link>
+          </div>
           <i className="fa fa-3x fa-info-circle"></i>
         </div>
         <div className={this.props.highlight === "home" ? "highlight" : "sidebar-div"}
@@ -30,3 +37,4 @@ export default class Sidebar extends Component {
     )
   }
 }
+export default connect(null,{ selectNavbar })(Sidebar)

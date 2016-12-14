@@ -6,6 +6,7 @@ import Desserts from './menus/desserts';
 import Glassware from './menus/glassware';
 import Munchies from './menus/munchies';
 import Buffet from './menus/buffet';
+import Checkout from '../components/checkout';
 import Sidebar from './sidebar_menu';
 import Service from './service_style';
 import rightArrow from '../resources/right_arrow.png';
@@ -96,6 +97,18 @@ class Food extends Component {
       return (
         <div className="container">
           <Buffet/>
+          <div className="container-with-sidebar">
+            <div className="container-horiz space-around">
+              <img onClick={()=>{this.setState({highlight: "appetizers"})}} className="arrow" src={leftArrow} alt="next" />
+              <img onClick={()=>{this.setState({highlight: "beverages"})}} className="arrow" src={rightArrow} alt="next" />
+            </div>
+          </div>
+        </div>
+      )
+      case "checkout":
+      return (
+        <div className="container">
+          <Checkout />
           <div className="container-with-sidebar">
             <div className="container-horiz space-around">
               <img onClick={()=>{this.setState({highlight: "appetizers"})}} className="arrow" src={leftArrow} alt="next" />

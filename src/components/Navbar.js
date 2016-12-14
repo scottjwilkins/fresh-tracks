@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import gondola from '../resources/gondola.png';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { selectNavbar } from '../actions/index.js';
@@ -10,8 +9,7 @@ class Navbar extends Component {
 
     return (
       <div className="container-outside space-around navbar fixed">
-        <Link to="/"className="navbar-div"
-            onClick={() => {this.props.selectNavbar("home")}}><img src={gondola} className="gondola" alt="Fresh Tracks Logo"/></Link>
+        <div className="navbar-spacer"></div>
         <Link to="/" className={this.props.navbar === "home" ? "navbar-div-highlight" : "navbar-div"}
             onClick={() => {this.props.selectNavbar("home")}}>
             Home

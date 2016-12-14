@@ -13,7 +13,6 @@ class Glassware extends Component {
 
   render() {
     const propGlass = this.props.glassware
-    console.log(propGlass);
     //created class to be able to check the defaultChecked value (passed as this.checked)
     class Glass {
       constructor(value, description) {

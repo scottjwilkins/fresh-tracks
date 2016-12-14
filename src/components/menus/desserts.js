@@ -13,9 +13,15 @@ class Dessert extends Component {
 
   render() {
     const propDessert = this.props.dessert
-    console.log(propDessert);
     //created class to be able to check the defaultChecked value (passed as this.checked)
     class DessertsClass {
+      constructor(value, description) {
+        this.value = value;
+        this.description = description;
+        this.checked = propDessert.indexOf(value) > -1;
+      }
+    }
+    class PieClass {
       constructor(value, description) {
         this.value = value;
         this.description = description;

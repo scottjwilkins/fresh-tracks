@@ -16,7 +16,6 @@ class Munchies extends Component {
 
   render() {
     const propMunchies = this.props.munchies
-    console.log(propMunchies);
     //created class to be able to check the defaultChecked value (passed as this.checked)
     class MunchiesClass {
       constructor(value, description) {
