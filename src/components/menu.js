@@ -109,7 +109,7 @@ class Food extends Component {
       case "checkout":
       return (
         <div className="container">
-          <Checkout />
+          <ClientInfo />
           <div className="container-with-sidebar">
             <div className="container-horiz space-around">
               <img onClick={()=>{this.setState({highlight: "appetizers"})}} className="arrow" src={leftArrow} alt="next" />
