@@ -11,6 +11,7 @@ import Sidebar from './sidebar_menu';
 import Service from './service_style';
 import rightArrow from '../resources/right_arrow.png';
 import leftArrow from '../resources/left_arrow.png';
+import ClientInfo from './client_info';
 
 class Food extends Component {
   constructor(props) {

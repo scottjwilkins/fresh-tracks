@@ -1,9 +1,24 @@
-
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import $ from 'jquery';
 
 class Checkout extends Component {
+  renderULHTML(cat){
+    return cat.map((item, idx) => {
+      if(item.arr.length > 0){
+          return `<h4>${item.category}</h4>
+        <ul>${this.renderLIHTML(item.arr)}</ul>`
+      } else {
+        return `<h4>${item.category}</h4>
+      <ul>None</ul>`
+      }
+    }).join("")
+  }
+  renderLIHTML(arr) {
+    return arr.map((item, idx) => {
+        return `<li>${item}</li>`
+  }).join("")
+}
   renderUL(cat){
     return cat.map((item, idx) => {
       if(item.arr.length > 0){
@@ -30,6 +45,18 @@ class Checkout extends Component {
         )
   })
 }
+  sendAjax(data){
+    $.ajax({
+      method: "POST",
+      url: "https://nameless-garden-22821.herokuapp.com/",
+      data: JSON.stringify({text: data}),
+      contentType: "application/json",
+    })
+    .done(function( msg ) {
+      alert( "Data Saved: " + msg );
+    });
+  }
+
   render() {
     const stuff = [
           {arr: this.props.appetizers, category: "appetizers"},
@@ -42,9 +69,12 @@ class Checkout extends Component {
           {arr: this.props.dessert, category: "dessert"},
           {arr: this.props.munchies, category: "munchies"},
         ]
+        const html = this.renderULHTML(stuff);
+
     return (
       <div className="container-with-sidebar">
         {this.renderUL(stuff)}
+        <button className="button-start" onClick={() => this.sendAjax(html)}>Looks good</button>
       </div>
     )
   }
