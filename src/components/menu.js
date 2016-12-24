@@ -94,6 +94,18 @@ class Food extends Component {
           </div>
         </div>
       )
+      case "info":
+      return (
+        <div className="container">
+          <ClientInfo />
+          <div className="container-with-sidebar">
+            <div className="container-horiz space-around">
+              <img onClick={()=>{this.setState({highlight: "beverages"})}} className="arrow" src={leftArrow} alt="next" />
+              <img onClick={()=>{this.setState({highlight: "munchies"})}} className="arrow" src={rightArrow} alt="next" />
+            </div>
+          </div>
+        </div>
+      )
       case "dinner":
       return (
         <div className="container">
@@ -109,7 +121,7 @@ class Food extends Component {
       case "checkout":
       return (
         <div className="container">
-          <ClientInfo />
+          <Checkout />
           <div className="container-with-sidebar">
             <div className="container-horiz space-around">
               <img onClick={()=>{this.setState({highlight: "appetizers"})}} className="arrow" src={leftArrow} alt="next" />

@@ -49,6 +49,10 @@ class Sidebar extends Component {
           onClick={this.props.style ? () => this.handleClick("checkout") : () => this.showAlert()}>
           <nav>Checkout</nav>
         </div>
+        <div className={this.props.highlight === "info" ? "highlight" : "sidebar-div"}
+          onClick={this.props.style ? () => this.handleClick("info") : () => this.showAlert()}>
+          <nav>Info</nav>
+        </div>
       </div>
     )
   }

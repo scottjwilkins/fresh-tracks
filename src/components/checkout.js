@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
+import { formValueSelector } from 'redux-form';
+console.log(formValueSelector);
+
 
 class Checkout extends Component {
   renderULHTML(cat){
@@ -58,6 +61,7 @@ class Checkout extends Component {
   }
 
   render() {
+    console.log(this.props.form);
     const stuff = [
           {arr: this.props.appetizers, category: "appetizers"},
           {arr: this.props.salad, category: "salad"},

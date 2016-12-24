@@ -11,6 +11,7 @@ export const BREAD_SELECTED = 'BREAD_SELECTED';
 export const SIDES_SELECTED = 'SIDES_SELECTED';
 export const SALAD_SELECTED = 'SALAD_SELECTED';
 export const ENTREES_SELECTED = 'ENTREES_SELECTED';
+export const CLIENT_INFO_SELECTED = 'CLIENT_INFO_SELECTED';
 
 
 export function selectService(service) {
@@ -83,5 +84,11 @@ export function selectNavbar(choice) {
   return {
     type: NAVBAR_SELECTED,
     payload: choice
+  }
+}
+export function handleClientInfo(props) {
+  return {
+    type: CLIENT_INFO_SELECTED,
+    payload: props
   }
 }
