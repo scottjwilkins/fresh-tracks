@@ -128,7 +128,7 @@
   font-weight: lighter;
 }
 .titles{
-  font-size: 2em;
+  font-size: 1.5em;
   color: #960716;
 }
 .navbar{
@@ -249,8 +249,21 @@ tr:hover{
   width: 300px;
   height: 150px;
 }
+.danger{
+  color: red
+}
+.cupcake{
+  margin-top: 25px;
+  width: 70px;
+}
 @media only screen and (min-width: 675px) {
     /* For desktop: */
+    .titles{
+      font-size: 2em;
+    }
+    .cupcake{
+      width: 100px;
+    }
     .navbar{
       align-items: center;
       font-size: .7em;

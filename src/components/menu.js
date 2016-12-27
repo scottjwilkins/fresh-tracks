@@ -17,7 +17,7 @@ class Food extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    highlight: "service"
+    highlight: "info"
   };
   this._changeCourse = this._changeCourse.bind(this);
 }

@@ -1,50 +1,63 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import cupcake from '../resources/cupcake.png';
-import { handleClientInfo } from '../actions/index'
+import { handleClientInfo } from '../actions/index';
+import plated from '../resources/plated.png';
+
 
 class clientInfo extends Component {
   render() {
     const { fields: { clientname, email, numberOfGuests, phone, additionalInfo }, handleSubmit } = this.props;
     return (
-      <form className="container-with-sidebar" onSubmit={handleSubmit(this.props.handleClientInfo)}>
-        <img src={cupcake} alt="cupcake" className="dave" />
-        <h3>Additional Information</h3>
-        <div className="client-info-div">
+      <form className="container-with-sidebar form-group" onSubmit={handleSubmit(this.props.handleClientInfo)}>
+        <div className="container-horiz center">
+          <h3 className="titles">About You</h3>
+
+          <img src={plated} alt="plated dishes" className="plated"/>
+        </div>
+        <h2 className="big-blurb gutter">
+          Ready to get started? We'll walk you through a few simple steps to create an idea for your event. The selections you make now aren't carved in stone and can be changed later on in the process. This information will help us create a package tailored to your specific needs. After you submit your choices, we will review them and contact you shortly with a personal proposal. First, we would like to know a little more about you!
+        </h2>
+        <div>
           <label>What is your name?</label>
-          <input type="text" placeholder="Jane Dough" className="" value={clientname.value || ''} {...clientname}/>
-          <div>
+            <input type="text" placeholder="Jane Dough" className="form-control"  value={this.props.clientInfo.clientname || ''} {...clientname}/>
+          <div className='danger'>
             {clientname.touched ? clientname.error : ""}
           </div>
         </div>
         <div className="client-info-div">
           <label>Phone number</label>
-          <input type="tel" placeholder="(000)000-0000" className="" value={phone.value || ''} {...phone}/>
-            <div>
+          <input type="tel" placeholder="(000)000-0000" className="form-control" value={this.props.clientInfo.phone || ''} {...phone}/>
+            <div className='danger'>
               {phone.touched ? phone.error : ""}
             </div>
         </div>
         <div className="client-info-div">
           <label>Email</label>
-          <input type="email" placeholder="JaneDough@gmail.com"className="" value={email.value || ''} {...email}/>
-            <div>
+          <input type="email" placeholder="JaneDough@gmail.com" className="form-control" value={this.props.clientInfo.email || ''} {...email}/>
+            <div className='danger'>
               {email.touched ? email.error : ""}
             </div>
         </div>
         <div className="client-info-div">
           <label>number of guests</label>
-          <input type="number" className="" placeholder="0" value={numberOfGuests.value || ''} {...numberOfGuests}/>
-            <div>
+          <input type="number" className="form-control" placeholder="0" value={this.props.clientInfo.numberOfGuests || ''} {...numberOfGuests}/>
+            <div className='danger'>
               {numberOfGuests.touched ? numberOfGuests.error : ""}
             </div>
         </div>
         <div className="client-info-div">
-          <textarea className="text-area" placeholder="Any thoughts, comments, questions, concerns?" value={additionalInfo.value || ''} {...additionalInfo}/>
+          <textarea className="text-area" placeholder="Any thoughts, comments, questions, concerns?" value={this.props.clientInfo.additionalInfo || ''} {...additionalInfo}/>
           <label>additional info</label>
         </div>
         <button type="submit" className="button-start">send</button>
       </form>
     )
+  }
+}
+function mapStateToProps(state) {
+  return {
+    clientInfo: state.clientInfo.info
   }
 }
 function validate(values){
@@ -67,4 +80,4 @@ export default reduxForm({
   form: 'clientInfo',
   fields: ['clientname', 'email', 'numberOfGuests', 'phone', 'additionalInfo'],
   validate
-}, null, { handleClientInfo })(clientInfo)
+}, mapStateToProps, { handleClientInfo })(clientInfo)

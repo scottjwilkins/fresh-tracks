@@ -21,6 +21,10 @@ class Sidebar extends Component {
           </div>
           <i className="fa fa-3x fa-cutlery"></i>
         </div>
+        <div className={this.props.highlight === "info" ? "highlight" : "sidebar-div"}
+          onClick={this.props.style ? () => this.handleClick("info") : () => this.showAlert()}>
+          <nav>About You</nav>
+        </div>
         <div className={this.props.highlight === "service" ? "highlight" : "sidebar-div"}
           onClick={() => this.handleClick("service")}>
           <nav>Service Style</nav>
@@ -48,10 +52,6 @@ class Sidebar extends Component {
         <div className={this.props.highlight === "checkout" ? "highlight" : "sidebar-div"}
           onClick={this.props.style ? () => this.handleClick("checkout") : () => this.showAlert()}>
           <nav>Checkout</nav>
-        </div>
-        <div className={this.props.highlight === "info" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("info") : () => this.showAlert()}>
-          <nav>Info</nav>
         </div>
       </div>
     )

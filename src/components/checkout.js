@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
-import { formValueSelector } from 'redux-form';
-console.log(formValueSelector);
+
+
 
 
 class Checkout extends Component {
@@ -61,7 +61,7 @@ class Checkout extends Component {
   }
 
   render() {
-    console.log(this.props.form);
+    console.log("email " + this.props.clientInfo.clientname);
     const stuff = [
           {arr: this.props.appetizers, category: "appetizers"},
           {arr: this.props.salad, category: "salad"},
@@ -94,6 +94,7 @@ function mapStateToProps(state) {
     sides: state.food.sides,
     entrees: state.food.entrees,
     salad: state.food.salad,
+    clientInfo: state.clientInfo.info
   }
 }
 export default connect(mapStateToProps)(Checkout);
