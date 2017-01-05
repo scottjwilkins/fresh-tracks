@@ -63,8 +63,8 @@ class Checkout extends Component {
   sendAjax(data, email){
     $.ajax({
       method: "POST",
-      //url: "https://nameless-garden-22821.herokuapp.com/",
-      url: "http://localhost:5678/",
+      url: "https://nameless-garden-22821.herokuapp.com/",
+      //url: "http://localhost:5678/",
       data: JSON.stringify({ text: data, email: email }),
       contentType: "application/json",
     })
