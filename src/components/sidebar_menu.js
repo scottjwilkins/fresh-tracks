@@ -5,13 +5,16 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 class Sidebar extends Component {
-  handleClick(e){
-    this.props.changeCourse(e)
-  }
   showAlert() {
     alert("Please select your style of service before continuing")
   }
-
+  handleClick(nav) {
+    if (this.props.clientInfo.length < 1) {
+      alert("please enter your information");
+      return;
+    }
+    this.props.style ? this.props.changeCourse(nav) : this.showAlert()
+  }
   render(){
     return (
       <div className="sidebar">
@@ -22,7 +25,7 @@ class Sidebar extends Component {
           <i className="fa fa-3x fa-cutlery"></i>
         </div>
         <div className={this.props.highlight === "info" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("info") : () => this.showAlert()}>
+          onClick={() => this.handleClick("info")}>
           <nav>About You</nav>
         </div>
         <div className={this.props.highlight === "service" ? "highlight" : "sidebar-div"}
@@ -30,27 +33,27 @@ class Sidebar extends Component {
           <nav>Service Style</nav>
         </div>
         <div className={this.props.highlight === "appetizers" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("appetizers") : () => this.showAlert()}>
+          onClick={() => this.handleClick("appetizers")}>
           <nav>Appetizers</nav>
         </div>
         <div className={this.props.highlight === "dinner" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("dinner") : () => this.showAlert()}>
+          onClick={() => this.handleClick("dinner")}>
           <nav>Main Courses</nav>
         </div>
         <div className={this.props.highlight === "beverages" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("beverages") : () => this.showAlert()}>
+          onClick={() => this.handleClick("beverages")}>
           <nav>Beverages</nav>
         </div>
         <div className={this.props.highlight === "desserts" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("desserts") : () => this.showAlert()}>
+          onClick={() => this.handleClick("desserts")}>
           <nav>Desserts</nav>
         </div>
         <div className={this.props.highlight === "munchies" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("munchies") : () => this.showAlert()}>
+          onClick={() => this.handleClick("munchies")}>
           <nav>Late Night Munchies</nav>
         </div>
         <div className={this.props.highlight === "checkout" ? "highlight" : "sidebar-div"}
-          onClick={this.props.style ? () => this.handleClick("checkout") : () => this.showAlert()}>
+          onClick={() => this.handleClick("checkout")}>
           <nav>Checkout</nav>
         </div>
       </div>
@@ -59,7 +62,9 @@ class Sidebar extends Component {
 }
 function mapStateToProps (state) {
   return {
-    style: state.serviceStyle.style}
+    style: state.serviceStyle.style,
+    clientInfo: state.clientInfo.info
+  }
   }
 
 export default connect(mapStateToProps, { selectNavbar })(Sidebar)

@@ -6,6 +6,18 @@ import $ from 'jquery';
 
 
 class Checkout extends Component {
+  buildHTML(stuff) {
+    const serviceStyle = this.props.serviceStyle;
+    const {clientname, email, numberOfGuests, phone, additionalInfo} = this.props.clientInfo;
+    return `<div style="background-color: #eee; border: 1px grey solid; padding: 5px">
+            <p>service style: ${serviceStyle}</p>
+            <p>name: ${clientname}</p>
+            <p>email: ${email}</p>
+            <p>number of guests: ${numberOfGuests}</p>
+            <p>phone number: ${phone}</p>
+            <p>${additionalInfo ? 'additional info: ' + additionalInfo : ''}</p>
+            </div>  <div style="background-color: #ddd; border: 1px grey solid; margin-top: 20px; padding: 5px"> ${this.renderULHTML(stuff)}</div>`  ;
+  }
   renderULHTML(cat){
     return cat.map((item, idx) => {
       if(item.arr.length > 0){
@@ -27,15 +39,15 @@ class Checkout extends Component {
       if(item.arr.length > 0){
           return (
             <div key={idx}>
-            <h4 key={item.category}>{item.category}</h4>
-            <ul key={idx+100}>{this.renderLI(item.arr)}</ul>
+            <h4>{item.category}</h4>
+            <ul>{this.renderLI(item.arr)}</ul>
             </div>
           )
       } else {
         return (
           <div key={idx}>
-          <h4 key={item.category}>{item.category}</h4>
-          <ul key={idx + 100}>None</ul>
+          <h4>{item.category}</h4>
+          <ul>None</ul>
           </div>
         )
       }
@@ -48,11 +60,12 @@ class Checkout extends Component {
         )
   })
 }
-  sendAjax(data){
+  sendAjax(data, email){
     $.ajax({
       method: "POST",
-      url: "https://nameless-garden-22821.herokuapp.com/",
-      data: JSON.stringify({text: data}),
+      //url: "https://nameless-garden-22821.herokuapp.com/",
+      url: "http://localhost:5678/",
+      data: JSON.stringify({ text: data, email: email }),
       contentType: "application/json",
     })
     .done(function( msg ) {
@@ -61,24 +74,32 @@ class Checkout extends Component {
   }
 
   render() {
-    console.log("email " + this.props.clientInfo.clientname);
+    const {appetizers, salad, bread, sides, entrees, glassware, beverages, dessert, munchies} = this.props
+    const {clientname, email, numberOfGuests, phone, additionalInfo} = this.props.clientInfo;
     const stuff = [
-          {arr: this.props.appetizers, category: "appetizers"},
-          {arr: this.props.salad, category: "salad"},
-          {arr: this.props.bread, category: "bread"},
-          {arr: this.props.sides, category: "sides"},
-          {arr: this.props.entrees, category: "entrees"},
-          {arr: this.props.glassware, category: "glassware"},
-          {arr: this.props.beverages, category: "beverages"},
-          {arr: this.props.dessert, category: "dessert"},
-          {arr: this.props.munchies, category: "munchies"},
+          {arr: appetizers, category: "appetizers"},
+          {arr: salad, category: "salad"},
+          {arr: bread, category: "bread"},
+          {arr: sides, category: "sides"},
+          {arr: entrees, category: "entrees"},
+          {arr: glassware, category: "glassware"},
+          {arr: beverages, category: "beverages"},
+          {arr: dessert, category: "dessert"},
+          {arr: munchies, category: "munchies"},
         ]
-        const html = this.renderULHTML(stuff);
+        const html = this.buildHTML(stuff)
+        const serviceStyle = this.props.serviceStyle
 
     return (
       <div className="container-with-sidebar">
+        <p>service style: {serviceStyle}</p>
+        <p>name: {clientname}</p>
+        <p>email: {email}</p>
+        <p>number of guests: {numberOfGuests}</p>
+        <p>phone number: {phone}</p>
+        <p>{additionalInfo ? 'additional info: ' + additionalInfo : ''}</p>
         {this.renderUL(stuff)}
-        <button className="button-start" onClick={() => this.sendAjax(html)}>Looks good</button>
+        <button className="button-start" onClick={() => this.sendAjax(html, clientname)}>Looks good</button>
       </div>
     )
   }
@@ -94,7 +115,8 @@ function mapStateToProps(state) {
     sides: state.food.sides,
     entrees: state.food.entrees,
     salad: state.food.salad,
-    clientInfo: state.clientInfo.info
+    clientInfo: state.clientInfo.info,
+    serviceStyle: state.serviceStyle.style
   }
 }
 export default connect(mapStateToProps)(Checkout);

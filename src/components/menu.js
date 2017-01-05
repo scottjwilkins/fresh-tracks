@@ -97,7 +97,7 @@ class Food extends Component {
       case "info":
       return (
         <div className="container">
-          <ClientInfo />
+          <ClientInfo changeCourse={this._changeCourse}/>
           <div className="container-with-sidebar">
             <div className="container-horiz space-around">
               <img onClick={()=>{this.setState({highlight: "beverages"})}} className="arrow" src={leftArrow} alt="next" />

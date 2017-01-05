@@ -102,9 +102,12 @@ class Appetizers extends Component {
     return (
       <div className="container-with-sidebar">
       <h1 className="titles">Appetizers</h1>
-      <h5 className="sample-titles">Displayed Appetizers – per person</h5>
-      <i>Passed Appetizers for up to 1 hour</i>
+      <i>Displayed Appetizers – per person</i>
       {this.renderAppetizers(passedApps)}
+      <br />
+      <hr></hr>
+      <br />
+      <i>Passed Appetizers for up to 1 hour</i>
       <h5 className="sample-titles">VEGETARIAN</h5>
       {this.renderAppetizers(vegApps)}
       <h5 className="sample-titles">CHICKEN</h5>

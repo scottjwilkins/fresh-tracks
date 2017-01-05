@@ -12,6 +12,7 @@ export default class Buffet extends Component {
         <div className="container-with-sidebar">
           <h1 className="titles">Loveland Pass Buffet</h1>
           <Loveland />
+          <hr></hr>
           <h1 className="titles">Backcountry Buffet</h1>
           <Backcountry />
         </div>

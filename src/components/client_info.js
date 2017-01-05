@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-import cupcake from '../resources/cupcake.png';
 import { handleClientInfo } from '../actions/index';
 import plated from '../resources/plated.png';
 
 
 class clientInfo extends Component {
+  handleClick() {
+    setTimeout(() => {
+      if (this.props.clientInfo) {
+        this.props.changeCourse("service")
+      }
+    }, 100)
+
+
+  }
   render() {
     const { fields: { clientname, email, numberOfGuests, phone, additionalInfo }, handleSubmit } = this.props;
     return (
-      <form className="container-with-sidebar form-group" onSubmit={handleSubmit(this.props.handleClientInfo)}>
-        <div className="container-horiz center">
+      <form className="container-with-sidebar" onSubmit={handleSubmit(this.props.handleClientInfo)}>
+        <div className="container-vert center">
           <h3 className="titles">About You</h3>
 
           <img src={plated} alt="plated dishes" className="plated"/>
@@ -18,7 +26,7 @@ class clientInfo extends Component {
         <h2 className="big-blurb gutter">
           Ready to get started? We'll walk you through a few simple steps to create an idea for your event. The selections you make now aren't carved in stone and can be changed later on in the process. This information will help us create a package tailored to your specific needs. After you submit your choices, we will review them and contact you shortly with a personal proposal. First, we would like to know a little more about you!
         </h2>
-        <div>
+        <div className="client-info-div">
           <label>What is your name?</label>
             <input type="text" placeholder="Jane Dough" className="form-control"  value={this.props.clientInfo.clientname || ''} {...clientname}/>
           <div className='danger'>
@@ -48,9 +56,8 @@ class clientInfo extends Component {
         </div>
         <div className="client-info-div">
           <textarea className="text-area" placeholder="Any thoughts, comments, questions, concerns?" value={this.props.clientInfo.additionalInfo || ''} {...additionalInfo}/>
-          <label>additional info</label>
         </div>
-        <button type="submit" className="button-start">send</button>
+        <button type="submit" className="button-start" onClick={() => this.handleClick()}>send</button>
       </form>
     )
   }

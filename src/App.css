@@ -3,6 +3,14 @@
   font-family: 'Josefin Sans', sans-serif;
   color: #333;
 }
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:#ccc;
+  height: 2px;
+}
 .container {
   width: 100%;
   display: flex;
