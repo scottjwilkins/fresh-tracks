@@ -3,6 +3,126 @@
   font-family: 'Josefin Sans', sans-serif;
   color: #333;
 }
+.inside-fancy-border{
+  margin-top: 150px;
+  overflow: scroll;
+  height:60vh;
+  width: 50%;
+}
+.fancy-border{
+  width: 120%;
+  height:80vh;
+  background-image: url(./resources/fancy-border.jpg);
+  background-size: 60vw;
+  background-repeat: no-repeat;
+  align-items: baseline;
+  margin-bottom: 50px;
+}
+.service-div{
+  position: relative;
+  z-index: -1;
+  width: 40%;
+  text-align: center;
+  height: 30vh;
+  background-image: url(./resources/set-table.png);
+  background-size: cover;;
+  background-attachment: fixed;
+  color: #fff;
+  font-size: 1em;
+  padding: 5em;
+}
+.waiter{
+  position: relative;
+  width: 40%;
+  text-align: center;
+  background-image: url(./resources/waiters.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-size: 1em;
+  padding: 5em;
+}
+.faq div{
+  background-color: #fff;
+}
+.waiter table{
+  color: #000;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.splash {
+  position: relative;
+  z-index: -1;
+  width: 40%;
+  text-align: center;
+  height: 30vh;
+  background-image: url(./resources/table-set.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-size: 1em;
+  padding: 5em;
+}
+.htop{
+  z-index: -1;
+  position: relative;
+  margin-top: 50px;
+  width: 50%;
+  text-align: center;
+  min-height: auto;
+  background-image: url(./resources/fork.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-size: 1em;
+  padding: 5em;
+}
+.outdoor{
+  z-index: -1;
+  position: relative;
+  margin-top: 50px;
+  width: 50%;
+  text-align: center;
+  min-height: auto;
+  /*background-image: url(./resources/outdoor.jpg);*/
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-size: 1em;
+  padding: 5em;
+}
+.about-you{
+  position: relative;
+  margin-top: 50px;
+  width: 30%;
+  text-align: center;
+  min-height: auto;
+  background-image: url(./resources/coffee.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-size: 1em;
+  padding: 5em;
+}
+.faq{
+  z-index: -1;
+  position: relative;
+  margin-top: 50px;
+  width: 50%;
+  text-align: center;
+  min-height: auto;
+  background-image: url(./resources/fancy-border.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 1em;
+  padding: 5em;
+}
+.htop div, .client-info, .outdoor p{
+  background-color: rgb(0, 0, 0) transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  color: white;
+}
 hr {
   border: 0;
   clear:both;
@@ -196,8 +316,9 @@ hr {
   width: 60%;
 }
 .button-start{
+  color: white;
   font-size: 1.2em;
-  background-color: #fff;
+  background-color: #33b;
   margin-bottom: 30px;
 }
 .button-start:hover{
@@ -264,8 +385,21 @@ tr:hover{
   margin-top: 25px;
   width: 70px;
 }
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 1111px) {
     /* For desktop: */
+    .service-div{
+      width: 80%;
+    }
+    .htop, .waiter{
+      width: 100%;
+    }
+    .splash{
+      width: 100%;
+    }
+
+    .about-you{
+      width: 80%;
+    }
     .titles{
       font-size: 2em;
     }
@@ -371,7 +505,7 @@ tr:hover{
 }
 .testimonial{
   font-style: italic;
-  color: #444;
+  color: #fff;
 }
 .address{
   margin-bottom: 10px;
@@ -393,6 +527,7 @@ tr:hover{
   text-align: left;
 }
 input {
+
   margin: 0 15px 0 0;
   float: left;
 }
@@ -410,4 +545,7 @@ input[type=checkbox]
 }
 .checkbox-description{
   margin: 15px 0 0 0;
+}
+.white, label {
+  color: #fff;
 }

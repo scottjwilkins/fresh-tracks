@@ -1,4 +1,4 @@
-import React from 'react';  
+import React from 'react';
 import plated from '../resources/plated.png';
 import cook from '../resources/cook.png';
 import station from '../resources/station.png';
@@ -26,9 +26,8 @@ class Service extends Component {
         <h1 className="titles">
           Your Event
         </h1>
-        <div className="container-horiz space-around baseline">
-          <img src={plated} alt="plated dishes" className="plated"/>
-          <p className="margin-left big-blurb">Ready to get started? We'll walk you through a few simple steps to create an idea for your event. The selections you make now aren't carved in stone and can be changed later on in the process. This information will help us create a package tailored to your specific needs. After you submit your choices, we will review them and contact you shortly with a personal proposal. </p>
+        <p className="margin-left big-blurb">Ready to get started? We'll walk you through a few simple steps to create an idea for your event. The selections you make now aren't carved in stone and can be changed later on in the process. This information will help us create a package tailored to your specific needs. After you submit your choices, we will review them and contact you shortly with a personal proposal. </p>
+        <div className="service-div">
         </div>
         <h1>Step One:</h1>
         <div className="container-horiz center">
@@ -36,7 +35,7 @@ class Service extends Component {
           <h5 className="sample-titles">Choose Your Style of Service</h5>
         </div>
         <div className="container-vert service-table">
-          <form>
+          <div className="waiter">
             <table>
               <thead>
               </thead>
@@ -132,12 +131,14 @@ class Service extends Component {
                 </tr>
               </tbody>
             </table>
-          </form>
+            </div>
+            <div className="outdoor">
               <p>Interested in an outdoor barn or backyard wedding? Fresh Tracks
 
               specializes in “off the grid” locations, creating an elegant event in even
 
               the most rustic locations.</p>
+          </div>
         </div>
       </div>
     )

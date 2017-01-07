@@ -35,7 +35,7 @@ class Food extends Component {
           <Service />
             <div className="container-with-sidebar ">
               <div className="container-vert">
-              <button className="button-start"
+              <button className="button-start top-margin"
               onClick={()=>{this.props.style ? this.setState({highlight: "appetizers"}) :
               this.setState({highlight: "service"})}}>Next <i className="fa fa-angle-right"></i></button>
               <p className="warning">{this.props.style ? "" : "(please make a selection to proceed)"}</p>
@@ -99,10 +99,6 @@ class Food extends Component {
         <div className="container">
           <ClientInfo changeCourse={this._changeCourse}/>
           <div className="container-with-sidebar">
-            <div className="container-horiz space-around">
-              <img onClick={()=>{this.setState({highlight: "beverages"})}} className="arrow" src={leftArrow} alt="next" />
-              <img onClick={()=>{this.setState({highlight: "munchies"})}} className="arrow" src={rightArrow} alt="next" />
-            </div>
           </div>
         </div>
       )

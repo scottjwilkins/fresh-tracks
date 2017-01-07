@@ -6,6 +6,9 @@ import $ from 'jquery';
 
 
 class Checkout extends Component {
+  componentWillMount() {
+      window.scrollTo(0, 0)
+  }
   buildHTML(stuff) {
     const serviceStyle = this.props.serviceStyle;
     const {clientname, email, numberOfGuests, phone, additionalInfo} = this.props.clientInfo;
