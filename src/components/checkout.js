@@ -63,18 +63,7 @@ class Checkout extends Component {
   })
 }
   sendAjax(data, email){
-    $.ajax({
-      method: "POST",
-      url: "https://nameless-garden-22821.herokuapp.com/",
-      //url: "http://localhost:5678/",
-      data: JSON.stringify({ text: data, email: email }),
-      contentType: "application/json",
-    }).fail((data) => {
-      console.log(data);
-    }).done(()=>{
-          window.location = '/sent';
-    })
-
+    this.props.sendAjax(data, email)
   }
 
   render() {
@@ -96,14 +85,17 @@ class Checkout extends Component {
 
     return (
       <div className="container-with-sidebar">
-        <p>service style: {serviceStyle}</p>
-        <p>name: {clientname}</p>
-        <p>email: {email}</p>
-        <p>number of guests: {numberOfGuests}</p>
-        <p>phone number: {phone}</p>
-        <p>{additionalInfo ? 'additional info: ' + additionalInfo : ''}</p>
-        {this.renderUL(stuff)}
-        <button className="button-start" onClick={() => this.sendAjax(html, clientname)}>Looks good</button>
+        <h5>This is the information you will be providing us. If you need to make changes, you can go back using the navigation menu to the left, or the buttons below.</h5>
+        <div className="grey">
+          <p>service style: {serviceStyle}</p>
+          <p>name: {clientname}</p>
+          <p>email: {email}</p>
+          <p>number of guests: {numberOfGuests}</p>
+          <p>phone number: {phone}</p>
+          <p>{additionalInfo ? 'additional info: ' + additionalInfo : ''}</p>
+          {this.renderUL(stuff)}
+          <button className="button-send" onClick={() => this.sendAjax(html, clientname)}>Send Info</button>
+        </div>
       </div>
     )
   }

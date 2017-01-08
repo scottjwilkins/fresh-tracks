@@ -3,16 +3,25 @@
   font-family: 'Josefin Sans', sans-serif;
   color: #333;
 }
+.grey {
+  background-color: #ccc;
+  padding:20px;
+  margin: 20px;
+  border: solid black 1px;
+}
 .sent {
+  top: -0px;
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url(./resources/apps.jpg);
   background-size: cover;
   background-attachment: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 110vw;
+  height: 110vh;
   margin-top: -10px;
+  margin-left: -218px;
   background-color: white;
   z-index: 1;
 }
@@ -52,6 +61,18 @@
   width: 40%;
   text-align: center;
   background-image: url(./resources/waiters.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  font-size: 1em;
+  padding: 5em;
+}
+.romance{
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+  background-image: url(./resources/romance.jpg);
   background-size: cover;
   background-attachment: fixed;
   color: #fff;
@@ -133,7 +154,7 @@
   font-size: 1em;
   padding: 5em;
 }
-.htop div, .client-info, .outdoor p{
+.htop div, .client-info, .outdoor p, .romance div{
   background-color: rgb(0, 0, 0) transparent;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 10px;
@@ -335,6 +356,14 @@ hr {
   color: white;
   font-size: 1.2em;
   background-color: #428bca;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  margin: 30px 40px 30px 0;
+}
+.button-send{
+  color: white;
+  font-size: 1.2em;
+  background-color: #d9534f;
   margin-bottom: 30px;
   border-radius: 5px;
   margin: 30px 40px 30px 0;

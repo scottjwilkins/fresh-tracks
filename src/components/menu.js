@@ -12,6 +12,8 @@ import Service from './service_style';
 import rightArrow from '../resources/right_arrow.png';
 import leftArrow from '../resources/left_arrow.png';
 import ClientInfo from './client_info';
+import InfoSent from './info_sent';
+import $ from 'jquery';
 
 class Food extends Component {
   constructor(props) {
@@ -20,6 +22,23 @@ class Food extends Component {
     highlight: "info"
   };
   this._changeCourse = this._changeCourse.bind(this);
+  this.sendAjax = this.sendAjax.bind(this);
+}
+sendAjax(data, email){
+  this.setState({highlight: "sent"}, () => {
+    $.ajax({
+      method: "POST",
+      url: "https://nameless-garden-22821.herokuapp.com/",
+      //url: "http://localhost:5678/",
+      data: JSON.stringify({ text: data, email: email }),
+      contentType: "application/json",
+    }).fail((data) => {
+      console.log(data);
+    }).done(() => {
+      console.log(data)
+    })
+  })
+
 }
   componentWillMount(){
         window.scrollTo(0, 0)
@@ -103,6 +122,10 @@ class Food extends Component {
           </div>
         </div>
       )
+      case "sent":
+      return (
+      <InfoSent />
+      )
       case "dinner":
       return (
         <div className="container">
@@ -118,7 +141,7 @@ class Food extends Component {
       case "checkout":
       return (
         <div className="container">
-          <Checkout />
+          <Checkout sendAjax={this.sendAjax}/>
           <div className="container-with-sidebar">
             <div className="container-horiz">
               <button onClick={()=>{this.setState({highlight: "munchies"})}} className="button-start"><i className="white fa fa-angle-left"></i> Late Night Munchies</button>
