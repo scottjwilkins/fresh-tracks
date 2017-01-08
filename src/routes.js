@@ -6,6 +6,7 @@ import Faq from './components/faq'
 import Sample from './components/sample'
 import Contact from './components/contact'
 import Menu from './components/menu'
+import InfoSent from './components/info_sent'
 import App from './App';
 import './App.css';
 
@@ -13,10 +14,7 @@ import './App.css';
 export default (
   <Route path="/" component={App} >
     <IndexRoute component={Home} />
-    <Route path="/service_style" component={ServiceStyle} />
-    <Route path="/faq" component={Faq} />
-    <Route path="/sample" component={Sample} />
-    <Route path="/contact" component={Contact} />
+    <Route path="/sent" component={InfoSent} />
     <Route path="/menu" component={Menu} />
   </Route>
 )

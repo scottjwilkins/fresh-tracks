@@ -37,7 +37,7 @@ class Food extends Component {
               <div className="container-vert">
               <button className="button-start top-margin"
               onClick={()=>{this.props.style ? this.setState({highlight: "appetizers"}) :
-              this.setState({highlight: "service"})}}>Next <i className="fa fa-angle-right"></i></button>
+              this.setState({highlight: "service"})}}>Next <i className="white fa fa-angle-right"></i></button>
               <p className="warning">{this.props.style ? "" : "(please make a selection to proceed)"}</p>
               <br></br>
               </div>
@@ -49,9 +49,10 @@ class Food extends Component {
         <div className="container">
           <Appetizers />
             <div className="container-with-sidebar">
-              <div className="container-horiz space-around">
-                <img onClick={()=>{this.setState({highlight: "service"})}} className="arrow" src={leftArrow} alt="next" />
-                <img onClick={()=>{this.setState({highlight: "dinner"})}} className="arrow" src={rightArrow} alt="next" />
+              <div className="container-horiz">
+
+                <button onClick={()=>{this.setState({highlight: "service"})}} className="button-start"><i className="white fa fa-angle-left"></i> Service Style</button>
+                <button onClick={()=>{this.setState({highlight: "dinner"})}} className="button-start">Main Courses <i className="white fa fa-angle-right"></i></button>
               </div>
             </div>
         </div>
@@ -63,9 +64,9 @@ class Food extends Component {
           <Beverages />
           <Glassware />
             <div className="container-with-sidebar">
-              <div className="container-horiz space-around">
-                <img onClick={()=>{this.setState({highlight: "dinner"})}} className="arrow" src={leftArrow} alt="next" />
-                <img onClick={()=>{this.setState({highlight: "desserts"})}} className="arrow" src={rightArrow} alt="next" />
+              <div className="container-horiz">
+                <button onClick={()=>{this.setState({highlight: "dinner"})}} className="button-start"><i className="white fa fa-angle-left"></i> Main Courses</button>
+                <button onClick={()=>{this.setState({highlight: "desserts"})}} className="button-start">Desserts <i className="white fa fa-angle-right"></i></button>
               </div>
             </div>
         </div>
@@ -75,9 +76,9 @@ class Food extends Component {
         <div className="container">
           <Munchies />
           <div className="container-with-sidebar">
-            <div className="container-horiz space-around">
-              <img onClick={()=>{this.setState({highlight: "desserts"})}} className="arrow" src={leftArrow} alt="next" />
-              <img onClick={()=>{this.setState({highlight: "munchies"})}} className="arrow" src={rightArrow} alt="next" />
+            <div className="container-horiz">
+              <button onClick={()=>{this.setState({highlight: "desserts"})}} className="button-start"><i className="white fa fa-angle-left"></i> Desserts</button>
+              <button onClick={()=>{this.setState({highlight: "checkout"})}} className="button-start">Checkout <i className="white fa fa-angle-right"></i></button>
             </div>
           </div>
         </div>
@@ -87,9 +88,9 @@ class Food extends Component {
         <div className="container">
           <Desserts />
           <div className="container-with-sidebar">
-            <div className="container-horiz space-around">
-              <img onClick={()=>{this.setState({highlight: "beverages"})}} className="arrow" src={leftArrow} alt="next" />
-              <img onClick={()=>{this.setState({highlight: "munchies"})}} className="arrow" src={rightArrow} alt="next" />
+            <div className="container-horiz">
+              <button onClick={()=>{this.setState({highlight: "beverages"})}} className="button-start"><i className="white fa fa-angle-left"></i> Beverages</button>
+              <button onClick={()=>{this.setState({highlight: "munchies"})}} className="button-start">Late Night Munchies <i className="white fa fa-angle-right"></i></button>
             </div>
           </div>
         </div>
@@ -107,9 +108,9 @@ class Food extends Component {
         <div className="container">
           <Buffet/>
           <div className="container-with-sidebar">
-            <div className="container-horiz space-around">
-              <img onClick={()=>{this.setState({highlight: "appetizers"})}} className="arrow" src={leftArrow} alt="next" />
-              <img onClick={()=>{this.setState({highlight: "beverages"})}} className="arrow" src={rightArrow} alt="next" />
+            <div className="container-horiz">
+              <button onClick={()=>{this.setState({highlight: "appetizers"})}} className="button-start"><i className="white fa fa-angle-left"></i> Appetizers</button>
+              <button onClick={()=>{this.setState({highlight: "beverages"})}} className="button-start">Beverages <i className="white fa fa-angle-right"></i></button>
             </div>
           </div>
         </div>
@@ -119,9 +120,8 @@ class Food extends Component {
         <div className="container">
           <Checkout />
           <div className="container-with-sidebar">
-            <div className="container-horiz space-around">
-              <img onClick={()=>{this.setState({highlight: "appetizers"})}} className="arrow" src={leftArrow} alt="next" />
-              <img onClick={()=>{this.setState({highlight: "beverages"})}} className="arrow" src={rightArrow} alt="next" />
+            <div className="container-horiz">
+              <button onClick={()=>{this.setState({highlight: "munchies"})}} className="button-start"><i className="white fa fa-angle-left"></i> Late Night Munchies</button>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ class Food extends Component {
         <div className="container">
           <Appetizers />
             <div className="container-with-sidebar">
-              <div className="container-horiz space-around">
+              <div className="container-horiz">
                 <img onClick={()=>{this.setState({highlight: "dinner"})}} className="arrow" src={rightArrow} alt="next" />
               </div>
             </div>

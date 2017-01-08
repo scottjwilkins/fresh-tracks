@@ -56,7 +56,7 @@ class clientInfo extends Component {
             <div className="client-info-div">
               <textarea className="text-area" placeholder="Any thoughts, comments, questions, concerns?" value={this.props.clientInfo.additionalInfo || ''} {...additionalInfo}/>
             </div>
-            <button type="submit" className="button-start" onClick={() => this.handleClick()}>send</button>
+            <button type="submit" className="button-start" onClick={() => this.handleClick()}>submit</button>
           </div>
         </form>
       </div>

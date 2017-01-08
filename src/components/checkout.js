@@ -4,7 +4,6 @@ import $ from 'jquery';
 
 
 
-
 class Checkout extends Component {
   componentWillMount() {
       window.scrollTo(0, 0)
@@ -70,10 +69,12 @@ class Checkout extends Component {
       //url: "http://localhost:5678/",
       data: JSON.stringify({ text: data, email: email }),
       contentType: "application/json",
+    }).fail((data) => {
+      console.log(data);
+    }).done(()=>{
+          window.location = '/sent';
     })
-    .done(function( msg ) {
-      alert( "Data Saved: " + msg );
-    });
+
   }
 
   render() {

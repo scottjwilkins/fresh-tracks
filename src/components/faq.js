@@ -8,7 +8,7 @@ export default class FAQ extends Component {
     return (
       <div className="container">
         <h1 className="titles">FAQs</h1>
-        <div className="gutter faq">
+        <div className="gutter">
           <div>
             <h5 className="questions">Do you have minimums?</h5>
             <p>Yes, drop off service is a $300 food minimum + Onsite Catering is a $750 food minimum</p>

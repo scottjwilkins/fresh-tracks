@@ -84,7 +84,7 @@ class Splash extends Component {
 
         Thank you Fresh Tracks!” – Allegra, bride June 2015</p>
         <Link to="/menu"><button
-        onClick={() => {this.props.selectNavbar("menu")}}className="button-start">Let's Get Started <i className="fa fa-angle-right"></i></button></Link>
+        onClick={() => {this.props.selectNavbar("menu")}}className="button-start">Build Your Menu <i className="fa fa-angle-right white"></i></button></Link>
       </div>
       )
   }

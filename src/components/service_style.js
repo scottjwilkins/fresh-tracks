@@ -26,7 +26,7 @@ class Service extends Component {
         <h1 className="titles">
           Your Event
         </h1>
-        <p className="margin-left big-blurb">Ready to get started? We'll walk you through a few simple steps to create an idea for your event. The selections you make now aren't carved in stone and can be changed later on in the process. This information will help us create a package tailored to your specific needs. After you submit your choices, we will review them and contact you shortly with a personal proposal. </p>
+        <p className="margin-left big-blurb">Next, we'd like to know what kind of service you're looking for. Choose one that best fits your needs. This will give us a general idea how to proceed. If you want to combine different styles of service, we can discuss that further in the process.</p>
         <div className="service-div">
         </div>
         <h1>Step One:</h1>
