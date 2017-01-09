@@ -30,14 +30,13 @@
 }
 .inside-fancy-border{
   margin-top: 150px;
-  overflow: scroll;
   height:60vh;
   width: 50%;
 }
 .fancy-border{
   width: 120%;
   height:80vh;
-  background-image: url(./resources/fancy-border.jpg);
+  background-image: url(./resources/top-border.jpg);
   background-size: 60vw;
   background-repeat: no-repeat;
   align-items: baseline;
@@ -148,7 +147,6 @@
   width: 50%;
   text-align: center;
   min-height: auto;
-  background-image: url(./resources/fancy-border.jpg);
   background-size: cover;
   background-attachment: fixed;
   font-size: 1em;
@@ -371,7 +369,10 @@ hr {
 .button-start:hover{
   background-color: #317ab9;
   cursor: pointer;
-
+}
+.button-send:hover{
+  background-color: #c8423e;
+  cursor: pointer;
 }
 .img-buffet{
   height: 200px;
@@ -401,6 +402,7 @@ tr {
 }
 tr:hover{
   background-color: #fff;
+  cursor: pointer;
 }
 
 .checkBox{
@@ -461,8 +463,8 @@ tr:hover{
       height: 75px;
     }
     .gondola{
-      width: 150px;
-      height: 70px;
+      width: 140px;
+      height: 60px;
     }
     .gondola-container{
       width: 218px;

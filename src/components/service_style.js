@@ -1,5 +1,4 @@
 import React from 'react';
-import plated from '../resources/plated.png';
 import cook from '../resources/cook.png';
 import station from '../resources/station.png';
 import table from '../resources/table.png';
@@ -29,7 +28,6 @@ class Service extends Component {
         <p className="margin-left big-blurb">Next, we'd like to know what kind of service you're looking for. Choose one that best fits your needs. This will give us a general idea how to proceed. If you want to combine different styles of service, we can discuss that further in the process.</p>
         <div className="service-div">
         </div>
-        <h1>Step One:</h1>
         <div className="container-horiz center">
           <img src={checkedBox} className="checkBox" alt="check box" />
           <h5 className="sample-titles">Choose Your Style of Service</h5>

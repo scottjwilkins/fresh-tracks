@@ -35,6 +35,7 @@ class Beverages extends Component {
         <div className="gutter container-vert">
           <h1 className="titles">Beverages</h1>
         </div>
+        <h4 className="">Offerings</h4>
         {this.renderBeverages(beverages)}
       </div>
     )

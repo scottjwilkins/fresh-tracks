@@ -55,7 +55,7 @@ class Splash extends Component {
 
             unique experience and delicious food that you and your guests will never forget! We understand that having so many
 
-            delicious menu options can be overwhelming, so we have outlined the process of building your menu in this packet.
+            delicious menu options can be overwhelming, so we have streamlined the process of building your menu in this website.
 
             Please expect a phone call from us to see if we can answer any questions or help in any way.</p>
           <p>

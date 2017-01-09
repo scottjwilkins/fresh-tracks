@@ -28,7 +28,7 @@ class Glassware extends Component {
 
     return (
       <div className="container-with-sidebar">
-        <h1 className="titles">Bar Glassware</h1>
+        <h4 className="">Bar Glassware</h4>
         {this.renderGlassware(glassware)}
       </div>
     )

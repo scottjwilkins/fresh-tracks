@@ -117,7 +117,7 @@ sendAjax(data, email){
       case "info":
       return (
         <div className="container">
-          <ClientInfo changeCourse={this._changeCourse}/>
+          <ClientInfo changeCourse={this._changeCourse.bind(this)}/>
           <div className="container-with-sidebar">
           </div>
         </div>

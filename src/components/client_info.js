@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import { handleClientInfo } from '../actions/index';
-import plated from '../resources/plated.png';
 
 
 class clientInfo extends Component {
@@ -15,7 +14,7 @@ class clientInfo extends Component {
 
   }
   render() {
-    const { fields: { clientname, email, numberOfGuests, phone, additionalInfo }, handleSubmit } = this.props;
+    const { fields: { clientname, email, numberOfGuests, phone}, handleSubmit } = this.props;
     return (
 
       <div className="container-vert center">
@@ -53,9 +52,6 @@ class clientInfo extends Component {
                 {numberOfGuests.touched ? numberOfGuests.error : ""}
               </div>
             </div>
-            <div className="client-info-div">
-              <textarea className="text-area" placeholder="Any thoughts, comments, questions, concerns?" value={this.props.clientInfo.additionalInfo || ''} {...additionalInfo}/>
-            </div>
             <button type="submit" className="button-start" onClick={() => this.handleClick()}>submit</button>
           </div>
         </form>
@@ -86,6 +82,6 @@ function validate(values){
 }
 export default reduxForm({
   form: 'clientInfo',
-  fields: ['clientname', 'email', 'numberOfGuests', 'phone', 'additionalInfo'],
+  fields: ['clientname', 'email', 'numberOfGuests', 'phone'],
   validate
 }, mapStateToProps, { handleClientInfo })(clientInfo)
