@@ -91,7 +91,7 @@ class Checkout extends Component {
 
     return (
       <div className="container-with-sidebar">
-        <h5>This is the information you will be providing us. If you need to make changes, you can go back using the navigation menu to the left, or the buttons below.</h5>
+        <h5>This is the information you will be providing us. If you need to make changes, you can go back using the navigation menu to the left, or the blue buttons below.</h5>
         <div className="grey">
           <p>service style: {serviceStyle}</p>
           <p>name: {clientname}</p>
