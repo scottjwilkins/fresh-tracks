@@ -108,4 +108,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {handleCheckboxChangeSalad,handleCheckboxChangeSides,  handleCheckboxChangeEntrees})(Loveland);
+export default connect(mapStateToProps, {handleCheckboxChangeSalad, handleCheckboxChangeSides,  handleCheckboxChangeEntrees})(Loveland);

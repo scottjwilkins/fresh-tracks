@@ -73,6 +73,7 @@ class Checkout extends Component {
     this.props.handleAdditionalInfo(e.target.value);
   }
   render() {
+    localStorage.setItem("state", JSON.stringify(this.props.state));
     const {appetizers, salad, bread, sides, entrees, glassware, beverages, dessert, munchies, info} = this.props
     const {clientname, email, numberOfGuests, phone} = this.props.clientInfo;
     const stuff = [
@@ -108,6 +109,7 @@ class Checkout extends Component {
 }
 function mapStateToProps(state) {
   return {
+    state: state,
     appetizers: state.food.appetizers,
     beverages: state.food.beverages,
     dessert: state.food.dessert,

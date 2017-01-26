@@ -15,5 +15,4 @@ const rootReducer = combineReducers({
   clientInfo: ClientInfoReducer,
   additionalInfo: AdditionalInfoReducer
 });
-
 export default rootReducer;
